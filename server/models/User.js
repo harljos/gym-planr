@@ -24,7 +24,8 @@ const userSchema = new Schema({
     },
     excercises: [
         {
-            type: String
+            type: Schema.Types.ObjectId,
+            ref: "Excercise"
         }
     ]
 });
