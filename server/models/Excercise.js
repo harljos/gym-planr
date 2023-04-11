@@ -14,7 +14,7 @@ const excerciseSchema = new Schema({
         type: String,
         required: true
     },
-    instruections: {
+    instructions: {
         type: String,
         required: true
     }
