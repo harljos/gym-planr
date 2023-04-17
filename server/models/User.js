@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
+const excerciseSchema = require("./Excercise");
 
 // schema for user model
 const userSchema = new Schema({
@@ -22,12 +23,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    excercises: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Excercise"
-        }
-    ]
+    excercises: [excerciseSchema]
 });
 
 // hashes password
