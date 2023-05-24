@@ -1,4 +1,4 @@
-const Login = () => {
+const LoggedOut = () => {
     return (
         <div className="bg-orange-700 h-screen flex items-center justify-center">
             <div className="bg-orange-700 rounded-lg p-8">
@@ -16,4 +16,4 @@ const Login = () => {
   );
 }
 
-export default Login;
+export default LoggedOut;
