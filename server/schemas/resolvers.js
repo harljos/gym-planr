@@ -41,18 +41,19 @@ const resolvers = {
       
             return { token, user };
           },
-          addExcercise: async (parent, { userID, name, muscle, difficulty, instructions }) => {
-            User.findOneAndUpdate(
-                { _id: userID },
-                { $push: { excercises: 
+          addExcercise: async (parent, { user, name, muscle, difficulty, instructions }) => {
+            const excercise = await User.findOneAndUpdate(
+                { _id: user },
+                { $push: { excercises:
                     { 
                         name: name, 
                         muscle: muscle, 
                         difficulty: difficulty, 
                         instructions: instructions
-                    }}},
-                { new: true }
-            )
+                    }
+                }},
+            );
+                return excercise;
           }
     }
 }
