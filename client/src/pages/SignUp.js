@@ -9,8 +9,19 @@ const SignUp = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
+  }
 
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
+    try {
+      const { data } = await addUser({
+        variables: { ...userFormData }
+      });
+    }
+    catch (e) {
+      console.error(e);
+    }
   }
 
   return (
