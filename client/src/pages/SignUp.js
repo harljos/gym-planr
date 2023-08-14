@@ -28,10 +28,24 @@ const SignUp = () => {
     <div className="bg-orange-700 h-screen flex items-center justify-center">
       <div className="bg-orange-700 rounded-lg p-8">
         <h1 className="text-2xl font-bold mb-4 text-white">Sign Up</h1>
-        <form>
+        <form onSubmit={handleFormSubmit}>
+        <div className="mb-4">
+            <label className="text-white block mb-2">Username</label>
+            <input
+              value={userFormData.username}
+              onChange={handleChange}
+              name="username"
+              type="username"
+              className="bg-orange-500 px-4 py-2 rounded w-full"
+              placeholder="Enter your username"
+            />
+          </div>
           <div className="mb-4">
             <label className="text-white block mb-2">Email</label>
             <input
+              value={userFormData.email}
+              onChange={handleChange}
+              name="email"
               type="email"
               className="bg-orange-500 px-4 py-2 rounded w-full"
               placeholder="Enter your email"
@@ -40,6 +54,9 @@ const SignUp = () => {
           <div className="mb-4">
             <label className="text-white block mb-2">Password</label>
             <input
+              value={userFormData.password}
+              onChange={handleChange}
+              name="password"
               type="password"
               className="bg-orange-500 px-4 py-2 rounded w-full"
               placeholder="Enter your password"
